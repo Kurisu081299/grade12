@@ -13,4 +13,18 @@ UserModel.getGrade12Data = (callback) => {
   });
 };
 
-module.exports = UserModel;
+
+UserModel.postUserData = (userData,callback) => {
+    const {name,age, address,phone}= userData;
+    dbConn.query("Insert INTO grade12_tb(name,age,address,phone)VALUES (?,?,?,?)", 
+    {name,age,address,phone},
+    (error, result) => {
+      if (error) {
+        console.error("Error inserting data: ", error);
+        return callback(error, null);
+      }
+  
+      return callback(null, result);
+    });
+  };
+  module.exports = UserModel;
