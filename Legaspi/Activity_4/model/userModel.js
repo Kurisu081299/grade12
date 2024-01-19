@@ -1,11 +1,11 @@
-const dbConn = require("../config/db.config");
+const dbConn = require("../configs/db.Configs");
 
 const UserModel = {};
 
-UserModel.getGrade11Data = (callback) => {
-  dbConn.query("SELECT * FROM grade11_tb", (error, result) => {
+UserModel.getName = (callback) => {
+  dbConn.query("SELECT * FROM name_tb", (error, result) => {
     if (error) {
-      console.error("Error retrieving grade 11 data: ", error);
+      console.error("Error retrieving grade 12 data: ", error);
       return callback(error, null);
     }
 
@@ -13,4 +13,18 @@ UserModel.getGrade11Data = (callback) => {
   });
 };
 
-module.exports = UserModel;
+
+UserModel.postUserData = (userData,callback) => {
+    const {name,age, address,phone}= userData;
+    dbConn.query("Insert INTO name_tb(name,age)VALUES (?,?)", 
+    {name,age},
+    (error, result) => {
+      if (error) {
+        console.error("Error inserting data: ", error);
+        return callback(error, null);
+      }
+  
+      return callback(null, result);
+    });
+  };
+  module.exports = UserModel;
