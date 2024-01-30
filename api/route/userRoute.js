@@ -5,5 +5,6 @@ const userControllers = require('../controller/userController');
 // List of Stories
 router.get("/get", userControllers.getGrade11Data);
 router.post("/post", userControllers.postGrade11Data);
+router.put("/put", userControllers.putGrade11Data);
 
 module.exports = router;

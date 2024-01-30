@@ -24,5 +24,20 @@ UserModel.insertGrade11Data = (data, callback) => {
   });
 };
 
+UserModel.updateGrade11Data = (id, data, callback) => {
+  dbConn.query(
+    "UPDATE grade11_tb SET name=?, age=?, address=? WHERE id=?",
+    [data.name, data.age, data.address, id],
+    (error, result) => {
+      if (error) {
+        console.error("Error updating grade 11 data: ", error);
+        return callback(error, null);
+      }
+
+      return callback(null, result);
+    }
+  );
+};
+
 
 module.exports = UserModel;
