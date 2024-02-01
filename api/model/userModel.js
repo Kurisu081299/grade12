@@ -39,5 +39,18 @@ UserModel.updateGrade11Data = (id, data, callback) => {
   );
 };
 
+UserModel.deleteGrade11Data = (idsToDelete, callback) => {
+  const query = "DELETE FROM grade11_tb WHERE id = ?";
+
+  dbConn.query(query, [idsToDelete], (error, result) => {
+    if (error) {
+      console.error("Error deleting grade 11 data: ", error);
+      return callback(error, null);
+    }
+
+    return callback(null, result);
+  });
+};
+
 
 module.exports = UserModel;
