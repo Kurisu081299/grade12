@@ -2,7 +2,7 @@ const userModel = require('../model/userModel');
 
 const userController = {};
 
-userController.getGradee11Data = (req, res) => {
+userController.getGrade11Data = (req, res) => {
   // Call the model to get grade 11 data
   userModel.getGrade11Data((error, grade11Data) => {
     if (error) {
