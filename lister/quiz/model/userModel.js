@@ -1,4 +1,4 @@
-const dbConn = require("../config/db.confi");
+const dbConn = require("../config/db.config");
 
 const UserModel = {};
 
