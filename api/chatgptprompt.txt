@@ -1,0 +1,33 @@
+create an html (with css) that will cater these api and the response should be a popup message
+
+Get
+http://localhost:8000/api/v1/user/get
+
+Post
+http://localhost:8000/api/v1/user/post
+
+Request body
+{
+    "name":"asda",
+    "age": 1,
+    "address":"asda"
+}
+
+Put
+http://localhost:8000/api/v1/user/put
+
+Request Body
+{
+    "id":1,
+    "name":"asda",
+    "age": 1,
+    "address":"asda"
+}
+
+Delete
+http://localhost:8000/api/v1/user/del
+
+request body
+{
+    "id":1
+}
