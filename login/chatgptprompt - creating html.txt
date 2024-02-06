@@ -1,0 +1,23 @@
+create an html (with css) that will cater these api. 1 html for signup, 1 for login, and 1 for successful login where it will get the data from the response of the login
+
+Get
+http://localhost:8000/api/v1/user/get
+
+Post - Signup
+http://localhost:8000/api/v1/user/signup
+
+Request body
+{
+    "username":"asda"
+    "password": ""
+}
+
+
+Post - Login
+http://localhost:8000/api/v1/user/login
+
+Request body
+{
+    "username":"asda"
+    "password": ""
+}

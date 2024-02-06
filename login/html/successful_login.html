@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Successful Login</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <h2>Welcome</h2>
+        <div id="user-info">
+            <!-- User information will be displayed here -->
+        </div>
+    </div>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Retrieve user info from localStorage
+            const userInfo = JSON.parse(localStorage.getItem('userInfo'));
+
+            const userInfoContainer = document.getElementById('user-info');
+            const userInfoHTML = `
+                <p>Welcome, ${userInfo.username}</p>
+                <button onclick="logout()">Logout</button>
+            `;
+            userInfoContainer.innerHTML = userInfoHTML;
+        });
+
+        function logout() {
+            // Clear localStorage and redirect to login page
+            localStorage.removeItem('userInfo');
+            alert("Logout successful");
+            window.location.href = 'login.html';
+        }
+    </script>
+</body>
+</html>
