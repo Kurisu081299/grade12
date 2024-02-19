@@ -6,7 +6,7 @@ const dbConn = mysql.createConnection({
   host: 'localhost',
   user: 'root',
   password: '1234',
-  database: 'product_tb',
+  database: 'product',
   connectTimeout: 10000 // Timeout in milliseconds
 });
 

@@ -3,9 +3,9 @@ const router = express.Router();
 const userController = require('../controller/userController');
 
 // List of Stories
-router.get("/get", userController.getProduct_tb);
-router.post("/post", userController.postProduct_tb);
-router.put("/put", userController.putProduct_tb);
-router.delete("/del", userController.deleteProduct_tb);
+router.get("/get", userController.getProduct);
+router.post("/post", userController.postProduct);
+router.put("/put", userController.putProduct);
+router.delete("/del", userController.deleteProduct);
 
 module.exports = router;
